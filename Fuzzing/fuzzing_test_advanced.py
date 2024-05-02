@@ -59,29 +59,41 @@ def sample_function(input_str: str, df: pd.DataFrame) -> None:
     except Exception as e:
         print('Error:', e)
 
+def export_results_to_file(results: list, file_path: str) -> None:
+    """Export results to a text file."""
+    with open(file_path, 'w') as file:
+        for i, result in enumerate(results, start=1):
+            file.write(f'Run #{i}\n')
+            file.write(str(result) + '\n')
+            file.write("=" * 50 + '\n')
+
 def main():
-    # Generate a DataFrame with 1000 rows
-    df = generate_larger_dataframe(1000)
+    # Generate a DataFrame with 5000 rows
+    df = generate_larger_dataframe(5000)
+
+    results = []
 
     # Iterate through the fuzzer and apply operations to the DataFrame
     for i, input_str in enumerate(fuzzer(), start=1):
-        print(f'Run #{i}')
-        print("Input:", input_str)
-        
         # Make a copy of the DataFrame for testing
         df_copy = df.copy()
         
         # Call sample_function with the input string and the DataFrame copy
         sample_function(input_str, df_copy)
         
-        # Print the DataFrame copy after applying the operation
-        print("DataFrame after operation:")
-        print(df_copy)
-        print("=" * 50)
-        
-        # Break after 100 iterations
-        if i >= 100:
+        # Append the DataFrame copy after applying the operation to results
+        results.append(df_copy)
+
+        # Print progress every 100 iterations
+        if i % 100 == 0:
+            print(f'Completed {i} iterations')
+
+        # Break after 500 iterations
+        if i >= 500:
             break
+
+    # Export results to a text file
+    export_results_to_file(results, 'results.txt')
 
 if __name__ == '__main__':
     main()
