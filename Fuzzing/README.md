@@ -13,8 +13,9 @@ The script performs the following tasks:
 
 ## File Structure
 
--`fuzzing_tests.py`: Python script containing simpler iteration of fuzzing tests.
+- `fuzzing_tests.py`: Python script containing simpler iteration of fuzzing tests.
 -  `fuzzing_test_advanced.py`: Python Script containing advanced iterations of fuzzing tests with larger DataFrames and operations.
+-  `results.txt`: This file, provdes sample results after running the 'fuzzing_test_advanced.py' for 500 iterations
 - `README.md`: This file, providing an overview of the project.
 
 
