@@ -13,7 +13,7 @@ The script performs the following tasks:
 
 ## File Structure
 
-- `fuzzing_test.py`: Python script containing the main code.
+- `fuzzing_test_advanced.py`: Python script containing the main code.
 - `README.md`: This file, providing an overview of the project.
 
 ## Requirements
