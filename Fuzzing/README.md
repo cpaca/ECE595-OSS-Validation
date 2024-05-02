@@ -1,6 +1,6 @@
 # Pandas DataFrame Fuzzing Test
 
-This Python script generates random operations on a pandas DataFrame to test various functionalities and error handling.
+This Python script generates random operations on a pandas DataFrame to test various functionalities and error handling through fuzzing tests.
 
 ## Description
 
@@ -16,8 +16,5 @@ The script performs the following tasks:
 - `fuzzing_test_advanced.py`: Python script containing the main code.
 - `README.md`: This file, providing an overview of the project.
 
-## Requirements
 
-- Python 3.7
-- pandas
 
