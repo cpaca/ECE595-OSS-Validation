@@ -18,6 +18,6 @@ The script performs the following tasks:
 
 ## Requirements
 
-- Python 3.x
+- Python 3.7
 - pandas
 
